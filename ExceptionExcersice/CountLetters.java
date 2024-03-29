@@ -9,10 +9,16 @@ public class CountLetters {
 		System.out.println("enter a single word:");
 		String word= sc.nextLine();
 		word= word.toUpperCase();
-		for(int i=0;i<word.length();i++) {
-			counts[word.charAt(i)-'A']++;
-//			System.out.println(c);
+		try {
+			for(int i=0;i<word.length();i++) {
+				counts[word.charAt(i)-'A']++;
+//				System.out.println(c);
+			}
+			
+		}catch(ArrayIndexOutOfBoundsException ae) {
+			
 		}
+		
 		System.out.println();
 		for(int i=0;i<counts.length;i++) {
 			if(counts[i]!=0) {
