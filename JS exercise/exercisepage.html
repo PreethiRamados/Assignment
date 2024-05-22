@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Management</title>
+  <link rel="stylesheet" href="../css/exercisepage.css">
+  <script src="../js/exercisepage.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h2>Add Customer</h2>
+      <form id="customerForm" onsubmit="return validateForm();">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <small class="error-message" id="nameError"></small>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <small class="error-message" id="emailError"></small>
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact No:</label>
+          <input type="tel" id="contact" name="contact" pattern="[7-9]{1}[0-9]{9}" required>
+          <small class="error-message" id="contactError"></small>
+        </div>
+        <div class="form-group">
+          <label for="accountType">Account Type:</label>
+          <select id="accountType" name="accountType" required>
+            <option value="">Select Account Type</option>
+            <option value="savings">Savings</option>
+            <option value="current">Current</option>
+          </select>
+          <small class="error-message" id="accountTypeError"></small>
+        </div>
+        <button type="submit">Add Customer</button>
+      </form>
+    </div>
+
+    <h2>Customer List</h2>
+    <table id="customerTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact No</th>
+          <th>Account Type</th>
+        </tr>
+      </thead>
+      <tbody id="customerList">
+        <!-- Customer rows will be dynamically added here -->
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
